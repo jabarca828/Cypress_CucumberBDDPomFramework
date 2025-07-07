@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// npx cypress run -e TAGS='@login' --headed
+// npx cypress run -e TAGS='@login or @contact-us' --headed
+// npx cypress run -e TAGS='@smoke' --headed
+// npx cypress run -e TAGS='(@login or @contact-us) and not @smoke' --headed
+// npx cypress run cypress/e2e/*.feature --headed
