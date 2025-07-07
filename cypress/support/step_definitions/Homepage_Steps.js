@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-<reference types="cypress-xpath" />
 
 import { Given, When } from "@badeball/cypress-cucumber-preprocessor";
 
