@@ -23,9 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('clickAndOpenLink_InSameTab', (selector) => {
+    cy.get(selector).invoke("removeAttr", "target").click();
+})
 
+// Cypress Run Commands
 // npx cypress run -e TAGS='@login' --headed
-// npx cypress run -e TAGS='@login or @contact-us' --headed
+// npx cypress run -e TAGS='@login or @contactus' --headed
 // npx cypress run -e TAGS='@smoke' --headed
-// npx cypress run -e TAGS='(@login or @contact-us) and not @smoke' --headed
+// npx cypress run -e TAGS='(@login or @contactus) and not @smoke' --headed
 // npx cypress run cypress/e2e/*.feature --headed

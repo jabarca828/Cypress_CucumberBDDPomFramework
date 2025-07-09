@@ -1,22 +1,26 @@
 /// <reference types="cypress" />
-/// <reference types="cypress-xpath" />
+import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
+import Login_PO from "../page_objects/Login_PO";
 
-import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
-
+const loginPage = new Login_PO;
 let stub;
 
-When('I type a username {word}', (username) => {
-    cy.get('[id="text"]').type(username);
+Given('I navigate to the webdriveruniversity login page', () => {
+    loginPage.navigateTo_Login_Page();
 })
 
-When('I type a password {word}', (password) => {
-    cy.get('[id="password"').type(password);
+When(`I type a username {}`, (username) => {
+    loginPage.type_Username(username);
 })
 
-When('I click on the login button', () => {
+When(`I type a password {}`, (password) => {
+    loginPage.type_Password(password);
+})
+
+When(`I click on the login button`, () => {
     stub = cy.stub();
     cy.on('window:alert', stub);
-    cy.get("#login-button").invoke("removeAttr", "target").click();
+    loginPage.clickOn_Login_Button();
 })
 
 Then('I should be presented with an alert box which contains text {string}', (expectedAlertText) => {

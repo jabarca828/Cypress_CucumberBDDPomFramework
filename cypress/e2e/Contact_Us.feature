@@ -38,5 +38,5 @@ Feature: WebdriverUniversity - Contact Us Page
         Examples:
             | firstName | lastName | emailAddress           | comment                 | message                         |
             | John      | Jones    | john_jones@mail.com    | Hello how are you?      | Thank You for your Message!     |
-            | Mia       | Carter   | Mia_carter123@mail.com | Test123 Test321         | Thank You for your Message!     |
+            | Mia       | Carter   | Mia_carter123@mail.com | Test123 Test321         | Thank You for your Message555!     |
             | Grace     | Hudson   | grace_hudson           | Do you create websites? | Error: Invalid email address |
